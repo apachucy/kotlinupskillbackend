@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/greeting")
 class SimpleController {
 
+    companion object {
+        const val GREET_KOTLIN: String = "Hello Kotlin upskill!"
+    }
+
     @GetMapping
     fun greeting(): String {
-        return "Hello Kotlin upskill!"
+        return "$GREET_KOTLIN"
     }
 }
