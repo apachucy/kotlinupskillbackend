@@ -30,4 +30,8 @@ class TaskDaoImpl(val jdbcTemplate: JdbcTemplate) : TaskDao {
         return task
 
     }
+
+    override fun delete(taskId: Int) {
+        TODO("Not yet implemented")
+    }
 }

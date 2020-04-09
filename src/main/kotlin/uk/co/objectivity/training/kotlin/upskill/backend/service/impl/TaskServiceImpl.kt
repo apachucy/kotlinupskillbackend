@@ -21,4 +21,9 @@ class TaskServiceImpl(val taskDao: TaskDao, val taskModelToTaskMapper: TaskModel
     override fun save(task: TaskModel): Task {
         return taskDao.save(taskModelToTaskMapper.map(task))
     }
+
+    override fun delete(id: Int) {
+        taskDao.delete(id)
+    }
+
 }

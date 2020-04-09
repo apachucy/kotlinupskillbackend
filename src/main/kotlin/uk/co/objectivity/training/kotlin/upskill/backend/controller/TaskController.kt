@@ -18,4 +18,9 @@ class TaskController(val taskService: TaskService) {
     fun save(@RequestBody @Valid task: TaskModel) {
         taskService.save(task)
     }
+
+    @DeleteMapping(value = ["{taskId}"], produces = ["application/json"])
+    fun delete(@PathVariable taskId: Int) {
+        taskService.delete(taskId)
+    }
 }
