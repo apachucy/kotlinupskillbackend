@@ -18,11 +18,12 @@ class TaskDaoImpl(val jdbcTemplate: JdbcTemplate) : TaskDao {
         val holder: KeyHolder = GeneratedKeyHolder()
         jdbcTemplate.update({ connection: Connection ->
             val ps = connection.prepareStatement(
-                    "INSERT INTO TASK (description, status, profit) values (?, ?, ?)",
+                    "INSERT INTO TASK (description, status, profit, assigned) values (?, ?, ?, ?)",
                     RETURN_GENERATED_KEYS)
             ps.setString(1, task.description)
             ps.setString(2, task.status.name)
             ps.setBigDecimal(3, task.profit)
+            ps.setString(4, task.assigned)
             ps
         }, holder)
         //KEY SHOULD NOT BE NULL

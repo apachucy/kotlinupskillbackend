@@ -7,4 +7,5 @@ interface TaskService {
     fun getAll(): List<TaskModel>
     fun save(task: TaskModel): Task
     fun delete(id: Int)
+    fun get(assignedPersonName: String): TaskModel
 }

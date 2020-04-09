@@ -12,5 +12,7 @@ data class TaskModel(
         @EnumPatternAnnotation(regexp = "TODO|IN_PROGRESS|IN_REVIEW|DONE")
         var status: StatusModel,
         @field:Min(value = 1, message = "profit should be positive")
-        var profit: BigDecimal) {
+        var profit: BigDecimal,
+        @field:NotBlank(message = "assigned person is mandatory")
+        var assigned: String) {
 }

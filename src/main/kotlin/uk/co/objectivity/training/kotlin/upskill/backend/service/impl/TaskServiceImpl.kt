@@ -26,4 +26,8 @@ class TaskServiceImpl(val taskDao: TaskDao, val taskModelToTaskMapper: TaskModel
         taskDao.delete(id)
     }
 
+    override fun get(assignedPersonName: String): TaskModel {
+        TODO("Not yet implemented")
+    }
+
 }

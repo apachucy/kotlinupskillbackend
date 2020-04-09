@@ -14,7 +14,8 @@ class TaskRowMapper : RowMapper<Task> {
         val task: Task = Task(
                 rs.getString("description"),
                 Status.valueOf(rs.getString("status")),
-                rs.getBigDecimal("profit")
+                rs.getBigDecimal("profit"),
+                rs.getString("assigned")
         )
         return task
     }
